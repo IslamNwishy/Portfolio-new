@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap");
 
-//general
-body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-}
-
 //Preloader
 $loader-size: 6rem;
 $animation-duration: 1.5s;
@@ -98,6 +92,9 @@ $animation-duration: 1.5s;
 .nav-like {
   position: relative;
   margin: 1em;
+  .container-fluid {
+    max-width: 1900px;
+  }
 
   .navbar-brand img {
     width: 4rem;
@@ -112,6 +109,46 @@ $animation-duration: 1.5s;
       letter-spacing: 3.5px;
     }
   }
+}
+//Home Header
+
+.bg-text {
+  overflow: hidden;
+  padding: 50% 0%;
+  padding-top: 0;
+  top: 15%;
+  position: absolute;
+  width: 100%;
+  z-index: -99;
+
+  &::after {
+    content: attr(data-bg-text);
+    display: block;
+    font-size: calc(5em + 20vw);
+    line-height: 1;
+    position: absolute;
+    z-index: -99;
+    opacity: 0.05;
+  }
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  .intro-inner {
+    text-transform: capitalize;
+  }
+}
+
+//general
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: white;
+  background-color: #3f474f;
+  background-image: url(../img/background.svg);
 }
 
 button:focus,
