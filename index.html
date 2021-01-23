@@ -69,7 +69,7 @@
                 <a class="nav-link" href="#about">About Me</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
+                <a class="nav-link" href="#projects">Projects</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
@@ -83,7 +83,9 @@
 
     <!--Header Start-->
     <div id="home" class="Home-header d-flex align-items-center">
-      <h1 class="bg-text" data-bg-text="Hi."></h1>
+      <div class="bg-text-outer">
+        <h1 class="bg-text" data-bg-text="Hi."></h1>
+      </div>
 
       <div class="intro container">
         <div class="intro-inner">
@@ -96,7 +98,9 @@
     <!--About Me Section-->
     <div id="about" class="offset"></div>
     <div class="About-me">
-      <h1 class="bg-text" data-bg-text="About Me."></h1>
+      <div class="bg-text-outer">
+        <h1 class="bg-text" data-bg-text="About Me."></h1>
+      </div>
       <div class="timeline-container" id="timeline-1">
         <div class="timeline-header">
           <h2 class="timeline-header__title">
@@ -107,7 +111,7 @@
           </h3>
         </div>
         <div class="timeline">
-          <div class="timeline-item" data-text="Born On">
+          <div class="timeline-item timeline-item--active" data-text="Born On">
             <div class="timeline__content">
               <img class="timeline__img" src="img/about1.jpg" />
               <h2 class="timeline__content-title">1999</h2>
@@ -241,6 +245,213 @@
           target="_blank"
           >Download CV</a
         >
+      </div>
+    </div>
+
+    <div id="projects" class="offset"></div>
+    <div class="Projects">
+      <div class="bg-text-outer">
+        <h1 class="bg-text" data-bg-text="Projects."></h1>
+      </div>
+      <div class="container">
+        <div
+          class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center"
+        >
+          <div class="col">
+            <div class="example-4 card-new">
+              <div
+                class="wrapper"
+                style="background-image: url('img/proj-1.png')"
+              >
+                <div class="date">
+                  <span class="day">Machine-learning</span>
+                </div>
+                <ul class="menu-content">
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-python"></i></div>
+                  </li>
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-html5"></i></div>
+                  </li>
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-css3-alt"></i></div>
+                  </li>
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-js"></i></div>
+                  </li>
+                </ul>
+                <div class="data">
+                  <div class="content">
+                    <span class="type">Machine-learning</span>
+                    <h1 class="title">Headline Categorizer</h1>
+                    <p class="text">
+                      A logistic regression model that predicts a news genre
+                      given its headline. Can be given a link to parse for the
+                      article headline within the link.
+                    </p>
+                    <h5 class="mt-5">Made Using:</h5>
+                    <div
+                      class="made-by mt-3 row row-cols-2 row-cols-md-4 g-1 justify-content-center text-center align-items-center"
+                    >
+                      <a href="#" class="h2 col"
+                        ><i class="fab fa-python"></i>
+                        <p>Python</p></a
+                      >
+                      <a href="#" class="h2 col"
+                        ><i class="fab fa-html5"></i>
+                        <p>HTML</p></a
+                      >
+                      <a href="#" class="h2 col"
+                        ><i class="fab fa-css3-alt"></i>
+                        <p>CSS</p></a
+                      >
+                      <a href="#" class="h2 col"
+                        ><i class="fab fa-js"></i>
+                        <p>JavaScript</p></a
+                      >
+                    </div>
+                    <div class="text-center">
+                      <div class="made-by btn btn-lg btn-outline-light">
+                        <i class="fab fa-github"></i> Github
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="example-4 card-new">
+              <div
+                class="wrapper"
+                style="background-image: url('img/proj-2.png')"
+              >
+                <div class="date">
+                  <span class="day">ReactJS + Flask</span>
+                </div>
+                <ul class="menu-content">
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-python"></i></div>
+                  </li>
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-html5"></i></div>
+                  </li>
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-css3-alt"></i></div>
+                  </li>
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-react"></i></div>
+                  </li>
+                </ul>
+                <div class="data">
+                  <div class="content">
+                    <span class="type">ReactJS + Flask</span>
+                    <h1 class="title">University Portal</h1>
+                    <p class="text">
+                      A University portal prototype based on the American
+                      University in Cairo (AUC) Catalog. The project was done in
+                      4 days and is intended as a submission for the
+                      Fundamentals of Database Systems Course at the AUC.
+                    </p>
+                    <h5 class="mt-5">Made Using:</h5>
+                    <div
+                      class="made-by mt-3 row row-cols-2 row-cols-md-4 g-1 justify-content-center text-center align-items-center"
+                    >
+                      <a href="#" class="h2 col"
+                        ><i class="fab fa-python"></i>
+                        <p>Python (flask)</p></a
+                      >
+                      <a href="#" class="h2 col"
+                        ><i class="fab fa-html5"></i>
+                        <p>HTML</p></a
+                      >
+                      <a href="#" class="h2 col"
+                        ><i class="fab fa-css3-alt"></i>
+                        <p>CSS</p></a
+                      >
+                      <a href="#" class="h2 col"
+                        ><i class="fab fa-react"></i>
+                        <p>ReactJS</p></a
+                      >
+                    </div>
+                    <div class="text-center">
+                      <div class="made-by btn btn-lg btn-outline-light">
+                        <i class="fab fa-github"></i> Github
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="example-4 card-new">
+              <div
+                class="wrapper"
+                style="background-image: url('img/about5.png')"
+              >
+                <div class="date">
+                  <span class="day">Front-End</span>
+                </div>
+                <ul class="menu-content">
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-html5"></i></div>
+                  </li>
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-css3-alt"></i></div>
+                  </li>
+                  <li>
+                    <div class="menu-icon">
+                      <i class="fab fa-bootstrap"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="menu-icon"><i class="fab fa-js"></i></div>
+                  </li>
+                </ul>
+                <div class="data">
+                  <div class="content">
+                    <span class="type">Front-End</span>
+                    <h1 class="title">Sina Template</h1>
+                    <p class="text">
+                      A responsive E-shop template created for the
+                      <a target="_blank" href="https://tree-code.com/"
+                        >tree-code</a
+                      >
+                      project
+                    </p>
+                    <h5 class="mt-5">Made Using:</h5>
+                    <div
+                      class="made-by mt-3 row row-cols-2 row-cols-md-4 g-1 justify-content-center text-center align-items-center"
+                    >
+                      <a class="h2 col"
+                        ><i class="fab fa-html5"></i>
+                        <p>HTML</p></a
+                      >
+                      <a class="h2 col"
+                        ><i class="fab fa-css3-alt"></i>
+                        <p>CSS</p></a
+                      >
+                      <a class="h2 col"
+                        ><i class="fab fa-bootstrap"></i>
+                        <p>Bootstrap</p></a
+                      >
+                      <a class="h2 col"
+                        ><i class="fab fa-js"></i>
+                        <p>JavaScript</p></a
+                      >
+                    </div>
+                    <div class="text-center">
+                      <div class="made-by btn btn-lg btn-outline-light">
+                        Take a Look
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

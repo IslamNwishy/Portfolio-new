@@ -121,23 +121,28 @@ $animation-duration: 1.5s;
 }
 //Home Header
 
-.bg-text {
-  overflow: hidden;
-  padding: 50% 0%;
-  padding-top: 0;
-  top: 15%;
+.bg-text-outer {
   position: absolute;
   width: 100%;
-  z-index: -99;
-
-  &::after {
-    content: attr(data-bg-text);
-    display: block;
-    font-size: calc(5em + 20vw);
-    line-height: 1;
-    position: absolute;
+  height: 100%;
+  .bg-text {
+    overflow: hidden;
+    padding: 50% 0%;
+    padding-top: 0;
+    top: 15%;
+    position: relative;
+    width: 100%;
     z-index: -99;
-    opacity: 0.05;
+
+    &::after {
+      content: attr(data-bg-text);
+      display: block;
+      font-size: calc(5em + 20vw);
+      line-height: 1;
+      position: absolute;
+      z-index: -99;
+      opacity: 0.05;
+    }
   }
 }
 
@@ -152,25 +157,22 @@ $animation-duration: 1.5s;
 }
 
 //about me
-
+// Responsive
+@mixin responsive() {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
 .About-me {
   margin-top: 30em;
   .bg-text {
-    top: 115%;
-
+    top: -30%;
     &::after {
       font-size: calc(1em + 15vw);
     }
   }
   h1 {
     text-transform: capitalize;
-  }
-  // @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
-  // Responsive
-  @mixin responsive() {
-    @media only screen and (max-width: 767px) {
-      @content;
-    }
   }
 
   $timeline-width: 700px;
@@ -341,6 +343,154 @@ $animation-duration: 1.5s;
     text-align: center;
   }
 }
+
+//projects
+.Projects {
+  margin-top: 20em;
+
+  .bg-text {
+    top: -30%;
+    &::after {
+      font-size: calc(1em + 15vw);
+    }
+  }
+  @mixin cf {
+    &::before,
+    &::after {
+      content: "";
+      display: table;
+    }
+    &::after {
+      clear: both;
+    }
+  }
+
+  // Base styles
+  .card-new {
+    float: center;
+    padding: 1rem;
+
+    .menu-content {
+      @include cf;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        display: inline-block;
+      }
+      .menu-icon {
+        color: lightgray;
+      }
+    }
+    .wrapper {
+      background-color: white;
+      height: 70vh;
+      min-height: 30em;
+      max-height: 40em;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 19px 38px rgba(black, 0.3), 0 15px 12px rgba(black, 0.2);
+      &:hover {
+        .data {
+          transform: translateY(0);
+        }
+      }
+    }
+    .data {
+      position: absolute;
+      bottom: 0;
+      background-color: #333;
+      color: lightgray;
+      width: 100%;
+      height: 100%;
+      transform: translateY(330px);
+      transition: transform 0.8s;
+      .content {
+        padding: 1.5em;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    .type {
+      font-size: 12px;
+    }
+    .title {
+      margin-top: 10px;
+    }
+    .text {
+      height: 70px;
+      margin: 0;
+    }
+  }
+
+  .example-4 {
+    .wrapper {
+      background: 50% 50% / cover no-repeat;
+    }
+    .date {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #333;
+      color: lightgray;
+      padding: 0.75rem;
+      span {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    .title {
+      color: lightgray;
+    }
+    .menu-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      li {
+        text-align: center;
+        width: 3rem;
+        background-color: #333;
+        height: 3rem;
+        position: relative;
+        &:first-child {
+          padding-top: 6px;
+          height: 3.3rem;
+        }
+      }
+      .menu-icon {
+        font-size: 24px;
+      }
+    }
+  }
+  .made-by {
+    a {
+      text-decoration: none;
+      color: lightgray;
+
+      p {
+        position: relative;
+        opacity: 0;
+        transition: opacity 0.6s, top 0.6s;
+        top: -1em;
+        font-size: medium;
+      }
+      &:hover {
+        p {
+          opacity: 1;
+          top: 0;
+        }
+      }
+    }
+    &.btn {
+      i {
+        margin-right: 1em;
+      }
+    }
+  }
+}
+
 //general
 body {
   font-family: "Montserrat", sans-serif;
@@ -348,6 +498,15 @@ body {
   color: white;
   background-color: #3f474f;
   background-image: url(../img/background.svg);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  &:hover {
+    color: gray;
+  }
 }
 
 button:focus,

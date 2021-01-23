@@ -9,9 +9,9 @@ $(window).on("load", function () {
 /*------------------
       Sticky Navbar
     --------------------*/
-function navbar() {
-  var nav = $("#nav");
-  var preH = $("#anchor").offset().top;
+function navbar(navId, anchorId) {
+  var nav = $(navId);
+  var preH = $(anchorId).offset().top;
 
   if (window.scrollY >= preH - 100) {
     nav.addClass("nav-outer-sticky");
@@ -64,6 +64,6 @@ function timeline() {
         On scroll
     --------------------*/
 window.addEventListener("scroll", function () {
-  navbar();
+  navbar("#nav", "#anchor");
   timeline();
 });
