@@ -39,15 +39,21 @@ var selectors = {
   activeClass: "timeline-item--active",
   img: ".timeline__img",
 };
+selectors.item.eq(0).addClass(selectors.activeClass);
+selectors.id.css(
+  "background-image",
+  "url(" + selectors.item.first().find(selectors.img).attr("src") + ")"
+);
+var busy = false;
 
 function timeline() {
   var max, min;
   var pos = window.scrollY;
   selectors.item.each(function () {
-    if (!$(this).hasClass(selectors.activeClass)) {
-      offset = $(this).offset().top;
-      min = offset - 100;
-      max = $(this).height() + offset - 40;
+    if (!$(this).hasClass(selectors.activeClass) && !busy) {
+      busy = true;
+      min = $(this).offset().top - screen.height / 3;
+      max = $(this).height() + $(this).offset().top - 40;
       if (pos <= max && pos >= min) {
         selectors.id.css(
           "background-image",
@@ -56,6 +62,7 @@ function timeline() {
         selectors.item.removeClass(selectors.activeClass);
         $(this).addClass(selectors.activeClass);
       }
+      busy = false;
     }
   });
 }
